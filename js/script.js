@@ -2,6 +2,7 @@ import ehUmCpf from "./valida-cpf.js";
 import ehMaiorDeIdade from "./valida-idade.js";
 
 const camposDoFormulario = document.querySelectorAll("[required]");
+const formulario = document.querySelector(['data-formulario']);
 camposDoFormulario.forEach((campo) => {
     campo.addEventListener("blur",()=> verificaCampo(campo));
     campo.addEventListener("invalid", evento => evento.preventDefault())
@@ -35,7 +36,7 @@ const mensagens = {
         valueMissing: 'O campo de CPF não pode estar vazio.',
         patternMismatch: "Por favor, preencha um CPF válido.",
         customError: "O CPF digitado não existe.",
-        tooShort: "O campo de CPF não tem caractéres suficientes."
+        tooShort: "Digite os 9 números do seu CPF."
     },
     aniversario: {
         valueMissing: 'O campo de data de nascimento não pode estar vazio.',
